@@ -1,76 +1,37 @@
-/* style.css */
-body {
-  font-family: 'Noto Sans KR', Arial, sans-serif;
-  background: #f9f9fb;
-  margin: 0;
-  color: #222;
-}
-header, footer {
-  background: #213e5c;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-}
-nav {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  background: #33517a;
-}
-nav a {
-  color: #fff;
-  text-decoration: none;
-  padding: 15px 25px;
-  font-weight: bold;
-  transition: background 0.2s;
-}
-nav a:hover, nav a.active {
-  background: #446fa4;
-}
-.container {
-  max-width: 900px;
-  margin: 30px auto;
-  background: #fff;
-  box-shadow: 0 4px 20px rgba(33,62,92,0.07);
-  border-radius: 12px;
-  padding: 36px 28px;
-}
-h1, h2, h3 {
-  color: #213e5c;
-  margin-top: 0;
-}
-.members {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  justify-content: center;
-}
-.member-card {
-  background: #f1f5fb;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(33,62,92,0.05);
-  padding: 20px;
-  width: 220px;
-  text-align: center;
-}
-.member-card img {
-  width: 90px; height: 90px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 20px;
-}
-.gallery-grid img {
-  width: 100%; border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(33,62,92,0.09);
-}
-@media (max-width: 600px) {
-  .container { padding: 16px 5px; }
-  .members { flex-direction: column; align-items: center; }
-  nav { flex-direction: column; }
-  nav a { padding: 10px 0; }
-}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>OOO학회 홈페이지</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="OOO학회 공식 홈페이지. 학회 소개, 멤버, 활동, 문의 안내.">
+</head>
+<body>
+  <header>
+    <h1>OOO학회</h1>
+    <p>함께 성장하는 학술 공동체</p>
+  </header>
+  <nav>
+    <a href="index.html" class="active">홈</a>
+    <a href="about.html">학회소개</a>
+    <a href="members.html">멤버소개</a>
+    <a href="gallery.html">활동갤러리</a>
+    <a href="contact.html">문의</a>
+  </nav>
+  <div class="container">
+    <h2>Welcome to OOO학회!</h2>
+    <p>
+      OOO학회는 서로 배우고 성장하는 학술 교류의 장입니다.<br>
+      각종 세미나, 워크샵, 프로젝트, 교류행사 등 다양한 활동을 하고 있습니다.
+    </p>
+    <h3>📢 최근 소식</h3>
+    <ul>
+      <li>2025.06.25 - 신입회원 모집!</li>
+      <li>2025.06.11 - 학회 워크샵 성황리 종료</li>
+    </ul>
+  </div>
+  <footer>
+    &copy; 2025 OOO학회 | 문의: ooo@yourdomain.com
+  </footer>
+</body>
+</html>
