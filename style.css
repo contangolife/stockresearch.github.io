@@ -5,9 +5,7 @@ body {
 }
 
 .bg-wrap {
-  position: relative;
-  min-height: 100vh;
-  background: url('/mnt/data/4f9311ce-607c-4d28-ae8b-a5db562da015.png') no-repeat center center/cover;
+  background: url('그림1.png') no-repeat center center/cover;
 }
 
 .bg-overlay {
