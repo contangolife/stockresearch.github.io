@@ -111,3 +111,40 @@ footer {
 .header-content button:hover, .header-content input[type="submit"]:hover {
   background: #f3f4f6;
 }
+
+.members {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  flex-wrap: wrap;
+  margin-top: 2em;
+}
+.member-card {
+  background: rgba(255,255,255,0.10);
+  border-radius: 20px;
+  box-shadow: 0 2px 12px 0 rgba(20,24,30,0.07);
+  padding: 32px 26px 18px 26px;
+  text-align: center;
+  min-width: 200px;
+  max-width: 220px;
+  color: #fff;
+  z-index: 2;
+}
+.member-card img {
+  width: 86px;
+  height: 86px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 18px;
+  border: 2px solid #fff3;
+}
+.member-card h3 {
+  margin: 10px 0 6px 0;
+  font-size: 1.15em;
+  font-weight: 700;
+}
+.member-card p {
+  margin: 4px 0 2px 0;
+  font-size: 0.97em;
+}
+
