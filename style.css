@@ -5,15 +5,24 @@ body {
 }
 
 .bg-wrap {
-  background: url('background.png') no-repeat center center/cover;
-  min-height: 100vh;
   position: relative;
+  min-height: 100vh;
+  overflow: hidden;
 }
-\
+
+.bg-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('background.png') no-repeat center center/cover;
+  filter: grayscale(1);
+  z-index: 0;
+}
+
 .bg-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(15, 23, 42, 0.82);  /* FCB 느낌 딥블루 + 진하게 */
+  background: rgba(15, 23, 42, 0.82);
   z-index: 1;
 }
 
