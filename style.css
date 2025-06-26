@@ -13,7 +13,7 @@ body {
 .bg-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(15, 23, 42, 0.82); /* 0.82로 어둡게! */
+  background: rgba(15, 23, 42, 0.82);  /* FCB 느낌 딥블루 + 진하게 */
   z-index: 1;
 }
 
