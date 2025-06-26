@@ -13,7 +13,7 @@ body {
 .bg-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(15, 23, 42, 0.7);
+  background: rgba(15, 23, 42, 0.82); /* 0.82로 어둡게! */
   z-index: 1;
 }
 
