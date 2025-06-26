@@ -89,3 +89,25 @@ footer {
   padding: 2em 0 1em 0;
   background: transparent;
 }
+
+.header-content input,
+.header-content textarea {
+  border-radius: 8px;
+  padding: 8px 12px;
+  border: none;
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+.header-content button, .header-content input[type="submit"] {
+  border-radius: 8px;
+  padding: 10px 30px;
+  background: #fff;
+  color: #222;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+.header-content button:hover, .header-content input[type="submit"]:hover {
+  background: #f3f4f6;
+}
