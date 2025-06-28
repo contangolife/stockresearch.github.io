@@ -154,3 +154,68 @@ footer {
   box-shadow: 0 6px 28px rgba(30,32,50,0.18);
   border-color: #fff;
 }
+/* ===== 기수 선택 동글 버튼 스타일 ===== */
+.members-select-section {
+  max-width: 1200px;
+  margin: 60px auto 0 auto;
+  background: #f3f3f3;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 2px 12px rgba(33,62,92,0.04);
+}
+.members-select-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 26px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+.generation-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.gen-btn {
+  display: flex;
+  align-items: center;
+  padding: 10px 26px;
+  border-radius: 999px;
+  background: #fff;
+  color: #232323;
+  font-size: 1.13rem;
+  font-weight: bold;
+  box-shadow: 0 1px 6px rgba(80,80,80,0.08);
+  margin-bottom: 8px;
+  transition: background 0.13s, color 0.13s;
+  text-decoration: none;
+  position: relative;
+}
+.gen-btn .count {
+  display: inline-block;
+  background: #ededed;
+  color: #b52222;
+  font-size: 0.98em;
+  font-weight: 600;
+  border-radius: 99px;
+  margin-left: 10px;
+  min-width: 22px;
+  text-align: center;
+  padding: 2px 8px 2px 8px;
+}
+.gen-btn.active,
+.gen-btn:hover {
+  background: #232323;
+  color: #fff;
+}
+.gen-btn.active .count,
+.gen-btn:hover .count {
+  background: #fff;
+  color: #b52222;
+  border: 1px solid #b52222;
+}
+@media (max-width: 700px) {
+  .members-select-section { padding: 10px; }
+  .generation-list { gap: 8px; }
+  .gen-btn { font-size: 0.96rem; padding: 7px 15px; }
+}
