@@ -3,43 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <title>멤버소개 - SR 주가예측연구회</title>
+  <link rel="icon" href="homepage_image/favicon.png" type="image/png">
   <link rel="stylesheet" href="style.css">
+  <meta name="description" content="SR 주가예측연구회 멤버 소개">
 </head>
 <body>
-  <header class="main-header">
-    <div class="header-inner">
-      <a href="index.html" class="logo-link">
-        <img src="homepage_image/logo.png" alt="SR 로고" class="logo-img">
-      </a>
-      <nav class="main-nav">
-        <a href="index.html">홈</a>
-        <a href="about.html">학회소개</a>
-        <a href="members.html" class="active">멤버소개</a>
-        <a href="gallery.html">활동갤러리</a>
-        <a href="contact.html">문의</a>
-      </nav>
-    </div>
-  </header>
+  <div class="bg-wrap">
+    <div class="bg-overlay"></div>
+    <header class="main-header">
+      <div class="header-inner">
+        <a href="index.html" class="logo-link">
+          <img src="homepage_image/logo.png" alt="SR 주가예측연구회 로고" class="logo-img">
+        </a>
+        <nav class="main-nav">
+          <a href="index.html">홈</a>
+          <a href="about.html">학회소개</a>
+          <a href="members.html" class="active">멤버소개</a>
+          <a href="gallery.html">활동갤러리</a>
+          <a href="contact.html">문의</a>
+        </nav>
+      </div>
+    </header>
 
-  <main>
-    <section class="members-select-section">
-      <div class="members-select-title">SR 주가예측연구회 <b>멤버를 소개합니다.</b></div>
-      <ul class="generation-list" id="generation-list">
-        <li class="gen-btn active" data-gen="all"><span class="wrap"><span>전체</span></span></li>
-        <li class="gen-btn" data-gen="1"><span class="wrap"><span>1기</span><span class="count">3</span></span></li>
-        <li class="gen-btn" data-gen="2"><span class="wrap"><span>2기</span><span class="count">2</span></span></li>
-        <!-- 필요시 추가 -->
-      </ul>
-    </section>
-    <div class="header-content">
-      <h2 id="members-title">전체 멤버</h2>
-      <div class="members" id="members-list"></div>
-    </div>
-  </main>
+    <main>
+      <section class="members-select-section">
+        <div class="members-select-title">SR 주가예측연구회 <b>멤버를 소개합니다.</b></div>
+        <ul class="generation-list" id="generation-list">
+          <li class="gen-btn active" data-gen="all"><span class="wrap"><span>전체</span></span></li>
+          <li class="gen-btn" data-gen="1"><span class="wrap"><span>1기</span><span class="count">3</span></span></li>
+          <li class="gen-btn" data-gen="2"><span class="wrap"><span>2기</span><span class="count">2</span></span></li>
+        </ul>
+      </section>
+      <div class="header-content">
+        <h2 id="members-title">전체 멤버</h2>
+        <div class="members" id="members-list"></div>
+      </div>
+    </main>
 
-  <footer>
-    &copy; SR 주가예측연구회
-  </footer>
+    <footer>
+      &copy; SR 주가예측연구회 | 문의: stockresearch@khu.ac.kr
+    </footer>
+  </div>
 
   <script>
     const membersData = {
@@ -95,27 +99,5 @@
       renderMembers('all');
     });
   </script>
-  <style>
-    body { background: #111; color: #fff; font-family: 'Noto Sans KR', Arial, sans-serif; margin:0; }
-    .main-header { background: #232323; padding: 24px 0; }
-    .header-inner { display: flex; align-items: center; justify-content: space-between; max-width:1100px; margin:0 auto; }
-    .main-nav a { color: #fff; text-decoration: none; margin-left: 24px; font-weight: bold; }
-    .main-nav a.active, .main-nav a:hover { color: #ffd1d1; }
-    .members-select-section { background: #f5f5f5; color: #222; padding: 40px 0 16px 0; text-align: center;}
-    .members-select-title { font-size: 1.8em; margin-bottom: 22px; }
-    .generation-list { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-bottom:16px;}
-    .gen-btn { padding: 9px 22px; border-radius: 20px; cursor: pointer; background: #fff; font-weight: bold; }
-    .gen-btn.active, .gen-btn:hover { background: #232323; color: #fff; }
-    .gen-btn .count { color:#b52222; margin-left: 6px;}
-    .header-content { max-width:1100px; margin:0 auto; padding: 32px 0; }
-    .members { display: flex; flex-wrap: wrap; gap: 34px; justify-content: center; }
-    .member-card { background: #232323; padding: 26px 18px; border-radius: 16px; width: 230px; text-align:center; box-shadow:0 2px 12px #0003;}
-    .member-card img { width:86px; height:86px; object-fit:cover; border-radius:50%; margin-bottom:15px; border:2px solid #fff4;}
-    .member-card h3 { margin:10px 0 6px 0; font-size:1.13em; font-weight:700;}
-    .member-detail { color:#ffd1d1; margin-bottom:3px;}
-    .member-major { font-size:0.95em; color:#ccc; margin-bottom:6px;}
-    .member-card p { color: #ffcaca; font-size:0.99em; margin-top:6px; }
-    footer { text-align:center; color:#bbb; padding:2em 0;}
-  </style>
 </body>
 </html>
