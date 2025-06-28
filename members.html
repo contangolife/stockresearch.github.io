@@ -29,34 +29,17 @@
       <section class="members-select-section">
         <div class="members-select-title">SR 주가예측연구회 <b>멤버를 소개합니다.</b></div>
         <div class="generation-list">
-          <a class="gen-btn active" href="#">전체</a>
-          <a class="gen-btn" href="members/members_1.html">1기 <span class="count">3</span></a>
-          <a class="gen-btn" href="members/members_2.html">2기 <span class="count">2</span></a>
-          <!-- 필요에 따라 추가 -->
+          <a class="gen-btn active" href="#" data-gen="all">전체</a>
+          <a class="gen-btn" href="#" data-gen="1">1기 <span class="count">3</span></a>
+          <a class="gen-btn" href="#" data-gen="2">2기 <span class="count">2</span></a>
+          <!-- 필요시 기수 추가 -->
         </div>
       </section>
 
       <div class="header-content">
-        <h2>전체 멤버</h2>
-        <div class="members">
-          <div class="member-card">
-            <img src="homepage_image/member1.jpg" alt="회장 사진">
-            <h3>박석주</h3>
-            <p>회장 / AI 연구</p>
-            <p>“항상 도전하는 OOO학회!”</p>
-          </div>
-          <div class="member-card">
-            <img src="homepage_image/member2.jpg" alt="부회장 사진">
-            <h3>김영희</h3>
-            <p>부회장 / 데이터분석</p>
-            <p>“함께 성장해요 :)”</p>
-          </div>
-          <div class="member-card">
-            <img src="homepage_image/member3.jpg" alt="총무 사진">
-            <h3>박석주</h3>
-            <p>총무 / 웹개발</p>
-            <p>“즐거운 학회 생활을 응원합니다!”</p>
-          </div>
+        <h2 id="members-title">전체 멤버</h2>
+        <div class="members" id="members-list">
+          <!-- 멤버 카드가 여기에 표시됩니다 -->
         </div>
       </div>
     </main>
@@ -65,5 +48,61 @@
       &copy; SR 주가예측연구회
     </footer>
   </div>
+
+  <!-- 기수별 멤버 데이터 + js 제어 코드 -->
+  <script>
+    // === 기수별 멤버 데이터 ===
+    const membersData = {
+      all: [
+        { name: "박석주", role: "회장 / AI 연구", quote: "항상 도전하는 OOO학회!", img: "homepage_image/member1.jpg" },
+        { name: "김영희", role: "부회장 / 데이터분석", quote: "함께 성장해요 :)", img: "homepage_image/member2.jpg" },
+        { name: "박석주", role: "총무 / 웹개발", quote: "즐거운 학회 생활을 응원합니다!", img: "homepage_image/member3.jpg" },
+      ],
+      "1": [
+        { name: "박석주", role: "회장 / AI 연구", quote: "항상 도전하는 OOO학회!", img: "homepage_image/member1.jpg" },
+        { name: "김영희", role: "부회장 / 데이터분석", quote: "함께 성장해요 :)", img: "homepage_image/member2.jpg" },
+        { name: "박석주", role: "총무 / 웹개발", quote: "즐거운 학회 생활을 응원합니다!", img: "homepage_image/member3.jpg" },
+      ],
+      "2": [
+        { name: "신입1", role: "신입 / 홍보", quote: "새로운 시작!", img: "homepage_image/noimage.png" },
+        { name: "신입2", role: "신입 / 기획", quote: "파이팅!", img: "homepage_image/noimage.png" },
+      ]
+    };
+
+    // === 멤버 카드 렌더링 함수 ===
+    function renderMembers(gen) {
+      const members = membersData[gen];
+      const container = document.getElementById('members-list');
+      const title = document.getElementById('members-title');
+      title.textContent = gen === 'all' ? "전체 멤버" : `${gen}기 멤버`;
+      if (!members || members.length === 0) {
+        container.innerHTML = `<div style="color:#fff; font-size:1.2em;">아직 등록된 멤버가 없습니다.</div>`;
+        return;
+      }
+      container.innerHTML = members.map(m =>
+        `<div class="member-card">
+          <img src="${m.img}" alt="${m.name}" onerror="this.src='homepage_image/noimage.png';">
+          <h3>${m.name}</h3>
+          <p>${m.role}</p>
+          <p>“${m.quote}”</p>
+        </div>`
+      ).join('');
+    }
+
+    // === 버튼 이벤트 연결 ===
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll('.gen-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelectorAll('.gen-btn').forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          const gen = this.dataset.gen;
+          renderMembers(gen);
+        });
+      });
+      // 첫 화면에 전체 멤버 표시
+      renderMembers('all');
+    });
+  </script>
 </body>
 </html>
