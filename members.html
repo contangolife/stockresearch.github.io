@@ -25,29 +25,42 @@
       </div>
     </header>
     <main>
-      <div class="gen-pill-bar" id="gen-pill-bar">
-        <!-- JS로 25기까지 버튼 자동 생성 -->
-      </div>
-      <!-- 원하는 위치에 나머지 컨텐츠 -->
+      <section class="members-select-section">
+        <div class="members-select-title">SR 주가예측연구회 <b>멤버를 소개합니다.</b></div>
+        <ul class="generation-list" id="generation-list">
+          <!-- JS에서 자동 생성 -->
+        </ul>
+      </section>
+      <!-- 전체 멤버 카드 등 컨텐츠는 이 아래에! -->
     </main>
     <footer>
       &copy; SR 주가예측연구회 | 문의: stockresearch@khu.ac.kr
     </footer>
     <script>
-      // === 기수 pill 버튼 25기까지 자동생성 ===
-      const bar = document.getElementById('gen-pill-bar');
-
+      // 자동생성
+      const genList = document.getElementById('generation-list');
+      // 전체 버튼
+      const allLi = document.createElement('li');
+      const allA = document.createElement('a');
+      allA.className = 'gen-btn';
+      allA.href = 'members.html';
+      allA.innerHTML = '<span class="wrap"><span>전체</span></span>';
+      // 현재가 전체면 active
+      if (/members\.html$/.test(window.location.href)) allA.classList.add('active');
+      allLi.appendChild(allA);
+      genList.appendChild(allLi);
+      // 1~25기 버튼 자동생성
       const maxGen = 25;
-      const url = window.location.href;
-      for(let i=1;i<=maxGen;i++){
-        const btn = document.createElement('button');
-        btn.className = 'gen-pill-btn';
-        btn.textContent = `${i}기`;
-        btn.onclick = () => location.href = `members/members_${i}.html`;
-        if(url.includes(`members_${i}.html`)) btn.classList.add('active');
-        bar.appendChild(btn);
+      for (let i = 1; i <= maxGen; i++) {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.className = 'gen-btn';
+        a.href = `members/members_${i}.html`;
+        a.innerHTML = `<span class="wrap"><span>${i}기</span></span>`;
+        if (window.location.href.includes(`members_${i}.html`)) a.classList.add('active');
+        li.appendChild(a);
+        genList.appendChild(li);
       }
-      if(/members\.html$/.test(url)) allBtn.classList.add('active');
     </script>
   </div>
 </body>
