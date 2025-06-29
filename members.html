@@ -39,16 +39,6 @@
     <script>
       // 자동생성
       const genList = document.getElementById('generation-list');
-      // 전체 버튼
-      const allLi = document.createElement('li');
-      const allA = document.createElement('a');
-      allA.className = 'gen-btn';
-      allA.href = 'members.html';
-      allA.innerHTML = '<span class="wrap"><span>전체</span></span>';
-      // 현재가 전체면 active
-      if (/members\.html$/.test(window.location.href)) allA.classList.add('active');
-      allLi.appendChild(allA);
-      genList.appendChild(allLi);
       // 1~25기 버튼 자동생성
       const maxGen = 25;
       for (let i = 1; i <= maxGen; i++) {
