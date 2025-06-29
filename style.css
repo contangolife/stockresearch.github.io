@@ -186,8 +186,8 @@ footer {
 
 .member-table-list {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5명씩 한 줄 */
-  gap: 26px 20px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px 12px;   /* 세로 18px, 가로 12px로 더 가깝게! */
   margin-top: 2em;
   justify-items: center;
 }
