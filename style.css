@@ -139,17 +139,12 @@ footer {
   color: #fff;
   font-weight: 400;
 }
-@media (max-width: 1100px) {
-  .member-grid-list {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px 6px;    
-  }
-  .member-grid-card {
-    width: 92%;       
-    max-width: 200px; 
-  }
+@media (max-width: 1400px) {
+  .member-grid-list { grid-template-columns: repeat(4, 1fr); }
 }
-
+@media (max-width: 1100px) {
+  .member-grid-list { grid-template-columns: repeat(3, 1fr); }
+}
 @media (max-width: 800px) {
   .member-grid-list { grid-template-columns: repeat(2, 1fr); }
 }
