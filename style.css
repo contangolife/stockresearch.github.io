@@ -124,7 +124,7 @@ footer {
   height: 140px;
   object-fit: cover;
   border-radius: 13px;
-  border: 2.5px solid #fff2;
+  border: none;
   margin-bottom: 8px;
   background: #eee;
 }
