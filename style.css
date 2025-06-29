@@ -224,7 +224,24 @@ footer {
 .member-table-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 36px;
+  gap: 28px;   /* gap을 줄여주면 더 많이 들어감 */
   justify-content: center;
   margin-top: 2em;
+  align-items: stretch; /* 카드 높이 맞춤 */
+}
+
+.member-card {
+  background: rgba(255,255,255,0.10);
+  border-radius: 20px;
+  box-shadow: 0 2px 12px 0 rgba(20,24,30,0.07);
+  padding: 32px 18px 18px 18px;
+  text-align: center;
+  min-width: 150px;
+  max-width: 180px;
+  flex: 1 1 170px;    /* 중요! 최소 170px, 한 줄에 여러개 가능 */
+  color: #fff;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
