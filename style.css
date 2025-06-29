@@ -3,6 +3,7 @@ body {
   padding: 0;
   font-family: 'Noto Sans KR', Arial, sans-serif;
 }
+
 .bg-wrap {
   position: relative;
   min-height: 100vh;
@@ -97,30 +98,29 @@ footer {
 .member-grid-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 10px 18px;          /* 세로 10px, 가로 18px → 확실히 줄임 */
-  margin: 0 auto 0 auto;   /* 위아래 마진 최소, 좌우 자동정렬 */
-  max-width: 1120px;       /* 전체 넓이 고정해서 좌우로 더 몰림 */
+  gap: 10px 18px;
+  margin: 0 auto;
+  max-width: 1120px;
   justify-items: center;
-  align-items: start;      /* 위로 붙게 */
+  align-items: start;
 }
 
 .member-grid-card {
   background: rgba(255,255,255,0.13);
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(20,24,30,0.09);
-  padding: 18px 6px 10px 6px;   /* 위/아래 패딩 줄임 */
+  padding: 18px 6px 10px 6px;
   color: #fff;
-  width: 158px;                  /* 가로 폭 줄임 */
+  width: 158px;
   min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: 230px;             /* 너무 세로로만 길지 않게 */
+  min-height: 230px;
 }
-
 .member-grid-card img {
-  width: 110px;    /* 사진 큼직하게! */
+  width: 110px;
   height: 140px;
   object-fit: cover;
   border-radius: 13px;
@@ -128,7 +128,6 @@ footer {
   margin-bottom: 8px;
   background: #eee;
 }
-
 .member-grid-card h3 {
   margin: 6px 0 3px 0;
   font-size: 1.12em;
@@ -174,6 +173,14 @@ footer {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 28px auto;
+  padding: 0;
+  list-style: none;
+}
+.generation-list li {
+  margin-bottom: 10px;
 }
 .gen-btn {
   display: flex;
@@ -186,9 +193,12 @@ footer {
   font-weight: bold;
   box-shadow: 0 1px 6px rgba(80,80,80,0.08);
   margin-bottom: 8px;
-  transition: background 0.13s, color 0.13s;
+  transition: background 0.13s, color 0.13s, transform 0.11s;
   text-decoration: none;
   position: relative;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 .gen-btn .count {
   display: inline-block;
@@ -206,6 +216,7 @@ footer {
 .gen-btn:hover {
   background: #232323;
   color: #fff;
+  transform: translateY(-2px) scale(1.05);
 }
 .gen-btn.active .count,
 .gen-btn:hover .count {
@@ -219,6 +230,7 @@ footer {
   .gen-btn { font-size: 0.96rem; padding: 7px 15px; }
 }
 
+/* ==== pill 스타일 (index 등에서만 쓰고 있다면 아래만 별도) ==== */
 .gen-pill-bar {
   display: flex;
   justify-content: center;
@@ -258,7 +270,6 @@ footer {
   transform: translateY(-2px) scale(1.08);
   box-shadow: 0 8px 28px rgba(80,80,100,0.11);
 }
-
 @media (max-width:700px){
   .gen-pill-bar { gap: 8px; margin: 24px 0 22px 0;}
   .gen-pill-btn { font-size: 0.99rem; padding: 0.61em 1.19em;}
