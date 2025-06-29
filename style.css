@@ -96,43 +96,6 @@ footer {
   background: transparent;
 }
 
-/* 기타 부가 요소 스타일(멤버/갤러리/폼 등 필요시 그대로 유지) */
-.members {
-  display: flex;
-  justify-content: center;
-  gap: 36px;
-  flex-wrap: wrap;
-  margin-top: 2em;
-}
-.member-card {
-  background: rgba(255,255,255,0.10);
-  border-radius: 20px;
-  box-shadow: 0 2px 12px 0 rgba(20,24,30,0.07);
-  padding: 32px 26px 18px 26px;
-  text-align: center;
-  min-width: 200px;
-  max-width: 220px;
-  color: #fff;
-  z-index: 2;
-}
-.member-card img {
-  width: 86px;
-  height: 86px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 18px;
-  border: 2px solid #fff3;
-}
-.member-card h3 {
-  margin: 10px 0 6px 0;
-  font-size: 1.15em;
-  font-weight: 700;
-}
-.member-card p {
-  margin: 4px 0 2px 0;
-  font-size: 0.97em;
-}
-
 .gallery-grid {
   display: flex;
   gap: 24px;
@@ -223,25 +186,41 @@ footer {
 
 .member-table-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: 28px;   /* gap을 줄여주면 더 많이 들어감 */
-  justify-content: center;
+  flex-direction: column;
+  gap: 36px;
   margin-top: 2em;
-  align-items: stretch; /* 카드 높이 맞춤 */
+  align-items: stretch;
 }
-
-.member-card {
+.member-row {
+  display: flex;
+  gap: 32px;
+  align-items: center;
   background: rgba(255,255,255,0.10);
   border-radius: 20px;
   box-shadow: 0 2px 12px 0 rgba(20,24,30,0.07);
-  padding: 32px 18px 18px 18px;
-  text-align: center;
-  min-width: 150px;
-  max-width: 180px;
-  flex: 1 1 170px;    /* 중요! 최소 170px, 한 줄에 여러개 가능 */
+  padding: 32px 38px;
   color: #fff;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
+.member-photo img {
+  width: 110px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #fff2;
+  background: #eee;
+}
+.member-info {
+  flex: 1;
+  text-align: left;
+}
+.member-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #fff;
+}
+.member-info > div {
+  margin-bottom: 5px;
+  font-size: 1.07em;
+}
+
