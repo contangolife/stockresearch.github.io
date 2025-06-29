@@ -187,41 +187,43 @@ footer {
 .member-table-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 18px 12px;   /* 세로 18px, 가로 12px로 더 가깝게! */
+  gap: 16px 10px;   /* 세로 16px, 가로 10px로 살짝 더 가깝게 */
   margin-top: 2em;
   justify-items: center;
 }
 
 .member-card {
-  background: rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.13);
   border-radius: 16px;
-  box-shadow: 0 2px 12px 0 rgba(20,24,30,0.07);
-  padding: 22px 8px;
+  box-shadow: 0 2px 12px 0 rgba(20,24,30,0.08);
+  padding: 26px 12px 18px 12px;   /* 상단/측면 padding 증가 */
   color: #fff;
-  width: 160px;      /* 카드 너비 맞춰서 조정 */
+  width: 180px;      /* 카드 살짝 키움 */
   text-align: center;
 }
 
 .member-photo img {
-  width: 70px;
-  height: 90px;
+  width: 90px;
+  height: 112px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 2px solid #fff2;
   background: #eee;
+  margin-bottom: 10px;
 }
 
 .member-info {
   text-align: center;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 .member-info h3 {
-  margin: 8px 0 5px 0;
-  font-size: 1.09em;
+  margin: 8px 0 4px 0;
+  font-size: 1.15em;
   font-weight: 700;
   color: #fff;
 }
 .member-info > div {
   margin-bottom: 2px;
-  font-size: 0.97em;
+  font-size: 0.99em;
 }
+
