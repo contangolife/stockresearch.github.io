@@ -6,51 +6,6 @@
   <link rel="icon" href="homepage_image/favicon.png" type="image/png">
   <link rel="stylesheet" href="style.css">
   <meta name="description" content="SR 주가예측연구회 멤버소개 기수선택">
-  <style>
-    .gen-pill-bar {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      margin: 48px 0 38px 0;
-      z-index: 2;
-      position: relative;
-      flex-wrap: wrap;
-    }
-    .gen-pill-btn {
-      background: rgba(255,255,255,0.13);
-      color: #4b5563;
-      font-size: 1.19rem;
-      padding: 0.78em 2.2em;
-      border-radius: 100px;
-      font-weight: 700;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      transition: 
-        background 0.18s,
-        color 0.18s,
-        box-shadow 0.15s,
-        transform 0.14s;
-      box-shadow: 0 1px 8px rgba(44,48,55,0.07);
-      letter-spacing: -0.7px;
-      opacity: 1;
-    }
-    .gen-pill-btn.active {
-      background: rgba(19,24,41,0.46); /* 진한 회색 */
-      color: #f3f3f3;
-      box-shadow: 0 3px 22px rgba(16,18,30,0.14);
-    }
-    .gen-pill-btn:hover, .gen-pill-btn:focus {
-      background: #e2e8f0;
-      color: #b52222;
-      transform: translateY(-1px) scale(1.04);
-      box-shadow: 0 6px 22px rgba(80,80,100,0.08);
-    }
-    @media (max-width:700px){
-      .gen-pill-bar { gap: 8px; margin: 24px 0 22px 0;}
-      .gen-pill-btn { font-size: 0.98rem; padding: 0.68em 1.12em;}
-    }
-  </style>
 </head>
 <body>
   <div class="bg-wrap">
@@ -81,31 +36,23 @@
     <script>
       // === 기수 pill 버튼 25기까지 자동생성 ===
       const bar = document.getElementById('gen-pill-bar');
-      // "전체" 버튼 생성 (원하면 제거/숨김 가능)
+      // "전체" 버튼 생성
       let allBtn = document.createElement('button');
       allBtn.className = 'gen-pill-btn';
       allBtn.textContent = '전체';
       allBtn.onclick = () => location.href='members.html';
       bar.appendChild(allBtn);
 
-      // 몇기인지 자동 판별 (여기선 25기)
       const maxGen = 25;
-      // 현재 페이지에서 active 처리용 (예: members_5.html)
       const url = window.location.href;
-      let activeIndex = 0; // 0=전체
       for(let i=1;i<=maxGen;i++){
         const btn = document.createElement('button');
         btn.className = 'gen-pill-btn';
         btn.textContent = `${i}기`;
         btn.onclick = () => location.href = `members/members_${i}.html`;
-        // 현재 페이지 url에 해당 기수 있으면 active
-        if(url.includes(`members_${i}.html`)) {
-          btn.classList.add('active');
-          activeIndex = i;
-        }
+        if(url.includes(`members_${i}.html`)) btn.classList.add('active');
         bar.appendChild(btn);
       }
-      // "전체" 페이지면 첫번째 active
       if(/members\.html$/.test(url)) allBtn.classList.add('active');
     </script>
   </div>
