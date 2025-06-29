@@ -220,3 +220,11 @@ footer {
   .generation-list { gap: 8px; }
   .gen-btn { font-size: 0.96rem; padding: 7px 15px; }
 }
+
+.member-table-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  justify-content: center;
+  margin-top: 2em;
+}
