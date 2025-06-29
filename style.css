@@ -120,8 +120,8 @@ footer {
 }
 
 .member-grid-card img {
-  width: 104px;    /* 사진 큼직하게! */
-  height: 132px;
+  width: 110px;    /* 사진 큼직하게! */
+  height: 140px;
   object-fit: cover;
   border-radius: 13px;
   border: 2.5px solid #fff2;
