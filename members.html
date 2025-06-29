@@ -7,55 +7,48 @@
   <link rel="stylesheet" href="style.css">
   <meta name="description" content="SR 주가예측연구회 멤버소개 기수선택">
   <style>
-    .gen-index-wrap {
-      min-height: 80vh;
+    .gen-pill-bar {
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      gap: 18px;
+      margin: 48px 0 38px 0;
       z-index: 2;
       position: relative;
-    }
-    .gen-index-title {
-      font-size: 2.3rem;
-      color: #fff;
-      font-weight: 800;
-      margin-bottom: 2.5em;
-      letter-spacing: 1px;
-      text-align: center;
-      z-index: 2;
-    }
-    .gen-index-list {
-      display: flex;
-      gap: 40px;
       flex-wrap: wrap;
-      justify-content: center;
-      z-index: 2;
     }
-    .gen-index-list a {
-      background: rgba(255,255,255,0.08);
-      color: #fff;
-      font-size: 1.4rem;
-      padding: 18px 44px;
-      border-radius: 20px;
-      text-decoration: none;
+    .gen-pill-btn {
+      background: rgba(255,255,255,0.13);
+      color: #4b5563;
+      font-size: 1.19rem;
+      padding: 0.78em 2.2em;
+      border-radius: 100px;
       font-weight: 700;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-      transition: background 0.18s, color 0.18s, transform 0.15s;
-      display: block;
-      margin: 8px 0;
-      border: 2px solid transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: 
+        background 0.18s,
+        color 0.18s,
+        box-shadow 0.15s,
+        transform 0.14s;
+      box-shadow: 0 1px 8px rgba(44,48,55,0.07);
+      letter-spacing: -0.7px;
+      opacity: 1;
     }
-    .gen-index-list a:hover, .gen-index-list a:focus {
-      background: #fff;
-      color: #1a1a1a;
-      transform: scale(1.06);
-      border: 2px solid #ffd1d1;
+    .gen-pill-btn.active {
+      background: rgba(19,24,41,0.46); /* 진한 회색 */
+      color: #f3f3f3;
+      box-shadow: 0 3px 22px rgba(16,18,30,0.14);
     }
-    @media (max-width:600px) {
-      .gen-index-title { font-size: 1.35rem; margin-bottom: 1.4em; }
-      .gen-index-list a { font-size: 1.03rem; padding: 10px 24px; }
-      .gen-index-list { gap: 12px; }
+    .gen-pill-btn:hover, .gen-pill-btn:focus {
+      background: #e2e8f0;
+      color: #b52222;
+      transform: translateY(-1px) scale(1.04);
+      box-shadow: 0 6px 22px rgba(80,80,100,0.08);
+    }
+    @media (max-width:700px){
+      .gen-pill-bar { gap: 8px; margin: 24px 0 22px 0;}
+      .gen-pill-btn { font-size: 0.98rem; padding: 0.68em 1.12em;}
     }
   </style>
 </head>
@@ -77,22 +70,44 @@
       </div>
     </header>
     <main>
-      <div class="gen-index-wrap">
-        <div class="gen-index-title">
-          SR 주가예측연구회<br>멤버 기수를 선택하세요
-        </div>
-        <div class="gen-index-list">
-          <a href="members/members_5.html">5기 멤버</a>
-          <a href="members/members_4.html">4기 멤버</a>
-          <a href="members/members_3.html">3기 멤버</a>
-          <a href="members/members_2.html">2기 멤버</a>
-          <a href="members/members_1.html">1기 멤버</a>
-        </div>
+      <div class="gen-pill-bar" id="gen-pill-bar">
+        <!-- JS로 25기까지 버튼 자동 생성 -->
       </div>
+      <!-- 원하는 위치에 나머지 컨텐츠 -->
     </main>
     <footer>
       &copy; SR 주가예측연구회 | 문의: stockresearch@khu.ac.kr
     </footer>
+    <script>
+      // === 기수 pill 버튼 25기까지 자동생성 ===
+      const bar = document.getElementById('gen-pill-bar');
+      // "전체" 버튼 생성 (원하면 제거/숨김 가능)
+      let allBtn = document.createElement('button');
+      allBtn.className = 'gen-pill-btn';
+      allBtn.textContent = '전체';
+      allBtn.onclick = () => location.href='members.html';
+      bar.appendChild(allBtn);
+
+      // 몇기인지 자동 판별 (여기선 25기)
+      const maxGen = 25;
+      // 현재 페이지에서 active 처리용 (예: members_5.html)
+      const url = window.location.href;
+      let activeIndex = 0; // 0=전체
+      for(let i=1;i<=maxGen;i++){
+        const btn = document.createElement('button');
+        btn.className = 'gen-pill-btn';
+        btn.textContent = `${i}기`;
+        btn.onclick = () => location.href = `members/members_${i}.html`;
+        // 현재 페이지 url에 해당 기수 있으면 active
+        if(url.includes(`members_${i}.html`)) {
+          btn.classList.add('active');
+          activeIndex = i;
+        }
+        bar.appendChild(btn);
+      }
+      // "전체" 페이지면 첫번째 active
+      if(/members\.html$/.test(url)) allBtn.classList.add('active');
+    </script>
   </div>
 </body>
 </html>
