@@ -6,6 +6,58 @@
   <link rel="icon" href="homepage_image/favicon.png" type="image/png">
   <link rel="stylesheet" href="style.css">
   <meta name="description" content="SR 주가예측연구회 멤버소개 기수선택">
+  <style>
+    .gen-index-wrap {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      position: relative;
+    }
+    .gen-index-title {
+      font-size: 2.3rem;
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 2.5em;
+      letter-spacing: 1px;
+      text-align: center;
+      z-index: 2;
+    }
+    .gen-index-list {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      z-index: 2;
+    }
+    .gen-index-list a {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 1.4rem;
+      padding: 18px 44px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      transition: background 0.18s, color 0.18s, transform 0.15s;
+      display: block;
+      margin: 8px 0;
+      border: 2px solid transparent;
+    }
+    .gen-index-list a:hover, .gen-index-list a:focus {
+      background: #fff;
+      color: #1a1a1a;
+      transform: scale(1.06);
+      border: 2px solid #ffd1d1;
+    }
+    @media (max-width:600px) {
+      .gen-index-title { font-size: 1.35rem; margin-bottom: 1.4em; }
+      .gen-index-list a { font-size: 1.03rem; padding: 10px 24px; }
+      .gen-index-list { gap: 12px; }
+    }
+  </style>
 </head>
 <body>
   <div class="bg-wrap">
