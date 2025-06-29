@@ -36,12 +36,6 @@
     <script>
       // === 기수 pill 버튼 25기까지 자동생성 ===
       const bar = document.getElementById('gen-pill-bar');
-      // "전체" 버튼 생성
-      let allBtn = document.createElement('button');
-      allBtn.className = 'gen-pill-btn';
-      allBtn.textContent = '전체';
-      allBtn.onclick = () => location.href='members.html';
-      bar.appendChild(allBtn);
 
       const maxGen = 25;
       const url = window.location.href;
